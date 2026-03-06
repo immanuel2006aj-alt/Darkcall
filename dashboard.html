@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>PrivateCall</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+background:#050816;
+color:white;
+font-family:'Space Grotesk',sans-serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+width:90%;
+max-width:380px;
+padding:30px;
+background:rgba(255,255,255,0.05);
+border-radius:20px;
+}
+
+.title{
+text-align:center;
+font-size:24px;
+margin-bottom:20px;
+}
+
+.profile{
+text-align:center;
+margin-bottom:20px;
+background:#0f172a;
+padding:12px;
+border-radius:12px;
+}
+
+input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#0f172a;
+color:white;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#7c3aed,#06b6d4);
+color:white;
+font-weight:600;
+}
+
+.logout{
+margin-top:15px;
+text-align:center;
+opacity:0.6;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">PrivateCall</div>
+
+<div class="profile">
+
+Name: <span id="name"></span><br>
+ID: <span id="id"></span>
+
+</div>
+
+<input id="friendid" placeholder="Enter Friend ID">
+
+<button onclick="callUser()">Start Call</button>
+
+<div class="logout" onclick="logout()">Logout</div>
+
+</div>
+
+<script>
+
+let myid=localStorage.getItem("userid")
+let name=localStorage.getItem("username")
+
+if(!myid){
+
+window.location="index.html"
+
+}
+
+document.getElementById("id").innerText=myid
+document.getElementById("name").innerText=name
+
+function callUser(){
+
+let friend=document.getElementById("friendid").value
+
+if(friend.length==5){
+
+alert("Calling "+friend)
+
+}else{
+
+alert("Enter valid Friend ID")
+
+}
+
+}
+
+function logout(){
+
+localStorage.removeItem("userid")
+localStorage.removeItem("username")
+
+window.location="index.html"
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>PrivateCall</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+background:#050816;
+color:white;
+font-family:'Space Grotesk',sans-serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.callbox{
+
+width:90%;
+max-width:350px;
+text-align:center;
+padding:35px;
+
+background:rgba(255,255,255,0.05);
+border-radius:20px;
+
+}
+
+.name{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.status{
+opacity:0.6;
+margin-bottom:10px;
+}
+
+.timer{
+font-size:18px;
+margin-bottom:20px;
+}
+
+button{
+
+padding:15px 25px;
+border:none;
+border-radius:15px;
+background:red;
+color:white;
+font-size:16px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="callbox">
+
+<div class="name" id="friend"></div>
+
+<div class="status">Connected 🔒</div>
+
+<div class="timer" id="timer">00:00</div>
+
+<button onclick="endCall()">End Call</button>
+
+</div>
+
+<script src="call.js"></script>
+
+</body>
+</html>

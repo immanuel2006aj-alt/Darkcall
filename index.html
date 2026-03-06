@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>PrivateCall</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Space Grotesk',sans-serif;
+}
+
+body{
+height:100vh;
+background:#050816;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+body::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:linear-gradient(45deg,#7c3aed,#06b6d4);
+filter:blur(140px);
+opacity:0.5;
+}
+
+.card{
+width:92%;
+max-width:380px;
+padding:40px 30px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(18px);
+border-radius:22px;
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
+
+.logo{
+text-align:center;
+font-size:28px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+opacity:0.6;
+margin-bottom:35px;
+}
+
+input{
+width:100%;
+padding:16px;
+border-radius:14px;
+border:none;
+outline:none;
+background:#0f172a;
+color:white;
+font-size:16px;
+margin-bottom:18px;
+}
+
+button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:14px;
+background:linear-gradient(135deg,#7c3aed,#06b6d4);
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+}
+
+.footer{
+margin-top:20px;
+text-align:center;
+font-size:12px;
+opacity:0.5;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">PrivateCall</div>
+
+<div class="subtitle">Secure Voice Network</div>
+
+<input id="userid" maxlength="5" placeholder="Enter your 5 digit ID">
+
+<button onclick="login()">Connect</button>
+
+<div class="footer">Encrypted Web Calling</div>
+
+</div>
+
+<script>
+
+const users = {
+
+"48392":"Sam",
+"73941":"Ravi",
+"88214":"Arun",
+"61520":"David"
+
+};
+
+function login(){
+
+let id=document.getElementById("userid").value;
+
+if(users[id]){
+
+localStorage.setItem("userid",id);
+localStorage.setItem("username",users[id]);
+
+window.location="dashboard.html";
+
+}else{
+
+alert("Invalid ID");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
